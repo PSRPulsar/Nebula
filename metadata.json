@@ -1,0 +1,11 @@
+{
+    "id": "nebula",
+    "name": "Nebula",
+    "author": ["PSRPulsar"],
+    "description": "Mod originally made just for art practice, it certainly is not just practice now! If you've ever heard of programmer art get ready for artist code (+featuring the odd bit of actual good code (thank you very much for the help balatro discord <3 ))",
+    "prefix": "neb",
+    "main_file": "main.lua",
+    "version": "0.0.1",
+    "badge_colour": "ca506f",
+    "icon_path": "icon.png"
+}
