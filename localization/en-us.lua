@@ -302,6 +302,15 @@ return {
                     'every {C:attention}rankless{} card'
                 }
             },
+            j_neb_clickbait = {
+                name = 'Cancelling Clickbait',
+                text = {
+                    '{C:green}#1# in #2#{} chance to gain a',
+                    'random {C:attention}Tag{} when hand is',
+                    'played, {C:green}+1 Numerator{} per',
+                    '{C:attention}"scored"{} Debuffed card in hand'
+                }
+            },
             
 
             
@@ -541,13 +550,14 @@ return {
         },
         dictionary = {
             neb_eated_ex = 'Eated!',
-            neb_divorced = 'Divorced!',
+            neb_divorced = 'Divorced!', --i can't believe i'm not even the first mod to have a Divorced! message
             neb_built = 'Built!',
             neb_dice_added = 'Dice',
+            neb_tag = 'Tag',
 
             k_neb_dice = 'Dice',
             b_neb_dice_cards = "Dice",
-            k_neb_dice_pack = 'Probability Pack'
+            k_neb_dice_pack = 'Probability Pack',
         }
     }
 }
