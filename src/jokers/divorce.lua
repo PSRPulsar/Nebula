@@ -6,6 +6,7 @@ SMODS.Joker {
     cost = 6,
     pos = { x = 5, y = 0 },
     config = { extra = { hands = 10, scalar = 1 } },
+    eternal_compat = false,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS.m_neb_debuffedcard
         return { vars = { card.ability.extra.hands, card.ability.extra.scalar} }

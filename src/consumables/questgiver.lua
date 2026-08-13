@@ -3,7 +3,7 @@ SMODS.Consumable {
     set = 'Tarot',
     order = 1,
     atlas = 'nebulaconsumables',
-    pos = { x = 0, y = 0 },
+    pos = { x = 5, y = 0 },
     config = { max_highlighted = 3, mod_conv = 'm_neb_sticky' },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]

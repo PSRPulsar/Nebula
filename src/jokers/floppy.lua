@@ -6,9 +6,10 @@ SMODS.Joker {
         y = 0
     },
     pixel_size = { h = 71 },
-    config = { extra = { chips = 0, scalar = 10 } },
+    config = { extra = { chips = 0, scalar = 8 } },
     rarity = 1,
     cost = 5,
+    perishable_compat = false,
     loc_vars = function(self, info_queue, card)
         return {
             vars = {

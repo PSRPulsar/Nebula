@@ -5,6 +5,7 @@ SMODS.Joker {
     blueprint_compat = 'false',
     atlas = 'nebulajokers',
     pos = { x = 9, y = 0 },
+    eternal_compat = false,
     loc_vars = function(self, info_queue, card)
         local manual_card = { rank = G.GAME.current_round.neb_manual_card_rank or 'Ace', suit = G.GAME.current_round.neb_manual_card_suit or 'Spades'}
         info_queue[#info_queue + 1] = G.P_CENTERS.c_soul
@@ -24,11 +25,9 @@ SMODS.Joker {
 				trigger = 'after',
 				delay = 0.1,
 				func = function()
-					if G.consumeables.config.card_limit > #G.consumeables.cards then
 						play_sound('timpani')
-						SMODS.add_card({ key = "c_soul" })
+						local card = SMODS.add_card({key = 'c_soul', edition = 'e_negative', area = G.consumeables})
 						card:juice_up(0.3, 0.5)
-					end
 					return true
 				end
 			}))

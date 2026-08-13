@@ -102,11 +102,10 @@ return {
             j_neb_reviewbomb = {
                 name = 'Review Bombing',
                 text = {
-                    'Gains {C:money}$#2#{} for each hand played',
-                    'with 3 or more "scoring" {C:attention}Debuffed{}',
-                    'cards, {C:attention}resets{} if {C:attention}2 or fewer{}',
-                    '{C:attention}Debuffed{} cards are "scored"',
-                    '{C:inactive}(Currently {C:money}$#1#{C:inactive})'
+                    'Gives {C:money}$#1#{} at end',
+                    'of round, Gains {C:money}+#2#{}',
+                    'if at least {C:attention}4{}',
+                    '{C:attention}Debuffed{} cards "scored"'
                 }
             },
             j_neb_tictactoe = {
@@ -131,13 +130,14 @@ return {
                     'Gain a random {C:purple}Tarot{} card if',
                     '{C:attention}poker hand{} is a {C:attention}#1#{},',
                     "poker hand changes",
-                    "at end of round"
+                    "at end of round",
+                    "{C:inactive}(Must have room)"
                 }
             },
             j_neb_nuclear = {
                 name = 'Nuclear Pulse Drive',
                 text = {
-                    '{C:green}1 in 2{} chance for each',
+                    '{C:green}#1# in #2#{} chance for each',
                     'scored card to be destroyed if',
                     '{C:attention}poker hand{} is a {C:attention}#3#{},',
                     "poker hand changes",
@@ -250,7 +250,58 @@ return {
                     'and {C:attention}Self Destruct{}',
                     '{C:inactive} (Rank and Suit change at end of round)'
                 }
-            }
+            },
+            j_neb_cereal = {
+                name = 'Cereal Box',
+                text = {
+                    'Gains {C:chips}+#3#{} Chips for each',
+                    '{C:attention}discarded{} card, Gains {C:mult}+#5#{} Mult',
+                    ' for each {C:attention}played{} card',
+                    '{C:inactive}(Currently {C:chips}+#2#{} {C:inactive}Chips, {C:mult}+#4#{} {C:inactive}Mult)',
+                    '{C:inactive}(scales for #1# more rounds)'
+                }
+            },
+            j_neb_dicestack = {
+                name = 'Dice Stack',
+                text = {
+                    'Gains {C:chips}+#2#{} Chips for ',
+                    'every {C:neb_dice}Dice{} card used',
+                    '{C:inactive} (Currently {C:chips}+#1#{C:inactive} Chips)'
+                }
+            },
+            j_neb_highroller = {
+                name = 'High Roller',
+                text = {
+                    '{C:green}#1# in #2#{} chance ',
+                    'to create a {C:neb_dice}Dice{} card',
+                    'when the shop is {C:attention}rerolled{}'
+                }
+            },
+            j_neb_weighted = {
+                name = 'Weighted Die',
+                text = {
+                    '{C:green}#1# in #2#{} chance ',
+                    'to create a {C:neb_dice}Dice{} card',
+                    'when a {C:neb_dice}Dice{} card is used',
+                    '{C:inactive} (Only works once per round)'
+                }
+            },
+            j_neb_sulfur = {
+                name = 'Sulfur Cube',
+                text = {
+                    'Each {C:attention}Enhanced card{}',
+                    'gives {C:mult}+#1#{} Mult while',
+                    'held in hand'
+                }
+            },
+            j_neb_finrock = { -- kerbal space program 2 redux mentioned
+                name = 'Fin Rock',
+                text = {
+                    'Retriggers every played',
+                    '{C:attention}suitless{} card, and',
+                    'every {C:attention}rankless{} card'
+                }
+            },
             
 
             
@@ -300,14 +351,203 @@ return {
                     "{C:attention}#2#s",
                 }
             }
+        },
+        Spectral = {
+            c_neb_d0 = {
+                name = 'D0',
+                text = {
+                    '{C:attention}#1# {}random cards',
+                    'held in hand',
+                    'become {C:dark_edition}Negative{}'
+                }
+            }
+        },
+        neb_dice = {
+            c_neb_d1 = {
+                name = 'D1',
+                text = {
+                    'Gives {C:attention}1{} random',
+                    'card held in hand',
+                    '{C:chips}+#1#{} Chips',
+                    'permanently'
+                }
+            },
+            c_neb_d2 = {
+                name = 'D2',
+                text = {
+                    'Gives {C:attention}D2{}',
+                    'cards held in hand',
+                    'a random {C:attention}Seal{}'
+                }
+            },
+            c_neb_d3 = {
+                name = 'D3',
+                text = {
+                    'Gain {C:attention}D3{}',
+                    'random Tags'
+                }
+            },
+            c_neb_d4 = {
+                name = 'D4',
+                text = {
+                    'Gain {C:attention}D4{} random',
+                    '{C:planet}Planet{} Cards',
+                    "{C:inactive}(Does NOT require room)",
+                    "{C:inactive}(Can overflow)"
+                }
+            },
+            c_neb_d6 = {
+                name = 'D6',
+                text = {
+                    'Enhances up to {C:attention}D6{}',
+                    'cards to {C:attention}Tiled Cards{}'
+                }
+            },
+            c_neb_d7 = {
+                name = 'D7',
+                text = {
+                    'Gives {C:attention}D7{} random',
+                    'cards held in hand',
+                    '{C:mult}+#1#{} Mult',
+                    'permanently'
+                }
+            },
+            c_neb_d8 = {
+                name = 'D8',
+                text = {
+                    'Destroy {C:attention}D8{} random',
+                    'cards held in hand'
+                }
+            },
+            c_neb_d10 = {
+                name = 'D10',
+                text = {
+                    'Gives a random',
+                    '{C:dark_edition}Editioned{} Joker,',
+                    'then {C:money}-$D10{}',
+                    "{C:inactive}(Must have room)"
+                    
+                }
+            },
+            c_neb_d12 = {
+                name = 'D12',
+                text = {
+                    'A random {C:attention}Joker{}',
+                    'gains {C:attention}+$D12{} Sell Value'
+
+                    
+                }
+            },
+            c_neb_d20 = {
+                name = 'D20',
+                text = {
+                    'Gives {C:money}$D20{}'
+                    
+                }
+            }
+        },
+        Back = {
+            b_neb_clipped = {
+                name = 'Clipped Deck',
+                text = {
+                    '{C:neb_dice}Dice{} cards may',
+                    'appear in the shop',
+                    'start with a {C:attention}D2{}'
+                }
+            },
+            b_neb_shuttle = {
+                name = 'Shuttle Deck',
+                text = {
+                    'Poker Hands start',
+                    'at {C:attention}level 2{}'
+                }
+            }
+        },
+        Voucher = {
+            v_neb_luckycharm = {
+                name = 'Lucky Charm',
+                text = {
+                    '{C:attention}+1 Option{} in',
+                    'all Probability Packs'
+                }
+            },
+            v_neb_genie = {
+                name = "Genie's Lamp",
+                text = {
+                    '{C:green}#1# in #2#{} chance',
+                    'to create a free',
+                    '{C:attention} Chance Tag{}',
+                    'at the {C:attention}end of shop{}'
+                }
+            }
+        },
+        Tag = {
+            tag_neb_chancetag = {
+                name = 'Chance Tag',
+                text = {
+                    "Gives a free",
+                    "{C:attention}Jumbo Probability Pack",
+                },
+            },
+        },
+        Other = {
+            undiscovered_neb_dice = {
+                name = 'Not Discovered',
+                text = {
+                    "Purchase or use",
+                    "this card in an",
+                    "unseeded run to",
+                    "learn what it does",
+                },
+            },
+            p_neb_probbooster1 = {
+                name = 'Probability Pack',
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:neb_dice} Dice{} cards to",
+                    "be used immediately",
+                }
+            },
+            p_neb_probbooster2 = {
+                name = 'Probability Pack',
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:neb_dice} Dice{} cards to",
+                    "be used immediately",
+                }
+            },
+            p_neb_probboosterjumbo = {
+                name = 'Jumbo Probability Pack',
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:neb_dice} Dice{} cards to",
+                    "be used immediately",
+                }
+            },
+            p_neb_probboostermega = {
+                name = 'Mega Probability Pack',
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:neb_dice} Dice{} cards to",
+                    "be used immediately",
+                }
+            }
         }
         
     },
     misc = {
+        labels = {
+            neb_dice = 'Dice'
+        },
         dictionary = {
             neb_eated_ex = 'Eated!',
             neb_divorced = 'Divorced!',
-            neb_built = 'Built!'
+            neb_built = 'Built!',
+            neb_dice_added = 'Dice',
+
+            k_neb_dice = 'Dice',
+            b_neb_dice_cards = "Dice",
+            k_neb_dice_pack = 'Probability Pack'
         }
     }
 }
