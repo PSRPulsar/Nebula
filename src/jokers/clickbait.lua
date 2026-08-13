@@ -38,9 +38,6 @@ SMODS.Joker {
                     it = it + 1
                     selected_tag = pseudorandom_element(tag_pool, 'neb_clickbait'..it)
                 end
-                if selected_tag == "tag_boss" then --horrifying, i had to reference how Cryptid does something
-					it = it - 1 
-				end
                 add_tag(Tag(selected_tag, false, 'Small'))
                     play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
