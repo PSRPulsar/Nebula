@@ -104,8 +104,8 @@ return {
                 text = {
                     'Gives {C:money}$#1#{} at end',
                     'of round, Gains {C:money}+#2#{}',
-                    'if at least {C:attention}4{}',
-                    '{C:attention}Debuffed{} cards "scored"'
+                    'if at least {C:attention}4 Debuffed{}',
+                    'cards "scored" in hand'
                 }
             },
             j_neb_tictactoe = {
@@ -309,6 +309,15 @@ return {
                     'random {C:attention}Tag{} when hand is',
                     'played, {C:green}+1 Numerator{} per',
                     '{C:attention}"scored"{} Debuffed card in hand'
+                }
+            },
+            j_neb_artemis = {
+                name = 'Artemis II Webstream',
+                text = {
+                    '{C:green}#1# in #2#{} chance to upgrade',
+                    'levels of {C:attention}#3#{} random',
+                    '{C:attention}poker hands{} when a',
+                    '{C:planet}Planet{} card is used'
                 }
             },
             

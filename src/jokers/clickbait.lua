@@ -7,7 +7,7 @@ SMODS.Joker {
     },
     config = { extra = { odds = 6 } },
     rarity = 2,
-    cost = 6,
+    cost = 7,
     loc_vars = function(self, info_queue, card)
         local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'neb_clickbait')
         return {
