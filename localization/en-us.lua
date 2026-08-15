@@ -320,6 +320,32 @@ return {
                     '{C:planet}Planet{} card is used'
                 }
             },
+            j_neb_factory = {
+                name = 'Factory Balls',
+                text = {
+                    '{C:green}#1# in #2#{} chance to apply',
+                    'a random {C:dark_edition}Edition{} to cards',
+                    'if they gain an {C:attention}Enhancemnt{} that',
+                    'is the same as their {C:attention}previous{} one'
+                }
+            },
+            j_neb_conspiracy = {
+                name = 'Conspiracy Board',
+                text = {
+                    'Apply {C:attention}Sticky Note{} to a',
+                    'random card {C:attention}in deck{} when',
+                    'a card is {C:attention}Enhanced{}',
+                    'with {C:attention}any other{} Enhancement'
+                }
+            },
+            j_neb_killer = {
+                name = 'Killer Clown',
+                text = {
+                    'Destroy a {C:attention}random{}',
+                    '{C:attention}Face{} card in deck',
+                    'when Blind is {C:attention}selected{}'
+                }
+            },
             
 
             
@@ -408,10 +434,8 @@ return {
             c_neb_d4 = {
                 name = 'D4',
                 text = {
-                    'Gain {C:attention}D4{} random',
-                    '{C:planet}Planet{} Cards',
-                    "{C:inactive}(Does NOT require room)",
-                    "{C:inactive}(Can overflow)"
+                    'Upgrade levels of {C:attention}D4{}',
+                    'random {C:attention}poker hands{}',
                 }
             },
             c_neb_d6 = {

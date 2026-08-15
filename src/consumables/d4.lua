@@ -18,25 +18,18 @@ SMODS.Consumable {
             end}))
         G.E_MANAGER:add_event(Event({
             trigger = 'after',
-            delay = 2.0,
-            func = function()
-                play_sound('timpani')
-                card:juice_up(0.3, 0.5)
-                
-                return true
-            end}))
-           for i = 1, roll do
-            G.E_MANAGER:add_event(Event({
-                trigger = 'after',
-                delay = 0.3,
-                func = function()
-                        play_sound('timpani')
-                        SMODS.add_card({ set = 'Planet', key_append = "neb_d4" })
-                        card:juice_up(0.3, 0.5)
-                    return true
-                end
+            delay = 1
             }))
-        end
+            local _poker_hands = {}
+            for handname, _ in pairs(G.GAME.hands) do
+                if SMODS.is_poker_hand_visible(handname) then
+                    _poker_hands[#_poker_hands + 1] = handname
+                end
+            end
+            for i=1, roll do
+                local random_hand = pseudorandom_element(_poker_hands, pseudoseed('neb_d4')) or "High Card"
+                SMODS.upgrade_poker_hands({ hands = random_hand, from = card, level_up = 1})
+            end
         delay(0.6)
 
     end,

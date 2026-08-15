@@ -1,0 +1,28 @@
+SMODS.Joker {
+    key = 'conspiracy',
+    atlas = 'nebulajokers',
+    pos = {
+        x = 9,
+        y = 1
+    },
+    config = { extra = { odds = 2 } },
+    rarity = 1,
+    cost = 5,
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS.m_neb_sticky
+    end,
+    calculate = function(self, card, context)
+        if context.setting_ability and G.P_CENTERS[context.new].set == 'Enhanced' and context.new ~= "m_neb_sticky" then
+            local plain_cards = {}
+            for k, v in pairs(G.playing_cards) do
+                if SMODS.has_enhancement(v, 'c_base') then
+                    table.insert(plain_cards, v)
+                end
+            end
+            if #plain_cards ~= 0 then
+                local card_to_enhance = pseudorandom_element(plain_cards, pseudoseed('neb_conspiracy'))
+                card_to_enhance:set_ability('m_neb_sticky')
+            end
+        end
+    end
+}
