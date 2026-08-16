@@ -30,7 +30,7 @@ SMODS.Joker {
             SMODS.destroy_cards(card, nil, nil, true)
                 return {
                     message = localize('neb_eated_ex'),
-                    colour = G.C.CHIPS
+                    colour = G.C.MULT
                 }
         end
     end

@@ -146,7 +146,7 @@ return {
                 }
             },
             j_neb_candycane = {
-                name = 'Candy cane',
+                name = 'Candy Cane',
                 text = {
                     '{C:attention}Next scored{} hand',
                     'becomes {C:dark_edition}Holographic{}'
@@ -353,6 +353,15 @@ return {
                     'this joker is',
                     '{C:attention}either{} of the',
                     '{C:attention}2 rightmost{} jokers',
+
+                }
+            },
+            j_neb_cake = {
+                name = 'Rainbow Cake',
+                text = {
+                    'The next',
+                    '{C:attention}bought{} Joker',
+                    'becomes {C:dark_edition}Polychrome'
 
                 }
             },
