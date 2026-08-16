@@ -346,6 +346,16 @@ return {
                     'when Blind is {C:attention}selected{}'
                 }
             },
+            j_neb_windows = {
+                name = 'Activate Windows',
+                text = {
+                    '{C:mult}+#1#{} Mult if',
+                    'this joker is',
+                    '{C:attention}either{} of the',
+                    '{C:attention}2 rightmost{} jokers',
+
+                }
+            },
             
 
             
