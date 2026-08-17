@@ -22,6 +22,11 @@ SMODS.Joker {
             if #plain_cards ~= 0 then
                 local card_to_enhance = pseudorandom_element(plain_cards, pseudoseed('neb_conspiracy'))
                 card_to_enhance:set_ability('m_neb_sticky')
+                return {
+                    message = localize('neb_noted'),
+                    colour = G.C.MONEY,
+                    card:juice_up(0.3, 0.5)
+                }
             end
         end
     end

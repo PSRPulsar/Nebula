@@ -38,6 +38,14 @@ SMODS.Atlas {
     path = 'decks.png',
     px = 71,
     py = 95
+}SMODS.Atlas {
+    key = 'nebulathejoker',
+    path = 'thejokerframes.png',
+    px = 71,
+    py = 95,
+    atlas_table = 'ANIMATION_ATLAS',
+    frames = 21,
+    fps = 10
 }
 local jokers_src = SMODS.NFS.getDirectoryItems(SMODS.current_mod.path .. "src/jokers")
 for _, file in ipairs(jokers_src) do

@@ -365,6 +365,26 @@ return {
 
                 }
             },
+            j_neb_thejoker = {
+                name = 'The Joker',
+                text = {
+                    '{X:mult,C:white}X#1#{}, Played hand is',
+                    '{C:attention}not allowed{} if it is a',
+                    '{C:attention}#2#{}, poker hand',
+                    'changes at end of round'
+
+                }
+            },
+            j_neb_puzzle = {
+                name = 'Puzzle Piece',
+                text = {
+                    'Gains {X:mult,C:white}X#4#{} Mult if played',
+                    'hand contains a {C:attention}Straight{}',
+                    '{C:green}#1# in #2#{} chance for cards',
+                    'to be drawn face down',
+                    '{C:inactive}Currently {X:mult,C:white}X#3#{} Mult'
+                }
+            },
             
 
             
@@ -606,6 +626,7 @@ return {
             neb_built = 'Built!',
             neb_dice_added = 'Dice',
             neb_tag = 'Tag',
+            neb_noted = 'Noted!',
 
             k_neb_dice = 'Dice',
             b_neb_dice_cards = "Dice",
