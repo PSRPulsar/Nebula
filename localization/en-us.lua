@@ -298,7 +298,7 @@ return {
                 name = 'Fin Rock',
                 text = {
                     'Retriggers every played',
-                    '{C:attention}suitless{} card, and',
+                    '{C:attention}suitless{} card and',
                     'every {C:attention}rankless{} card'
                 }
             },
@@ -352,7 +352,7 @@ return {
                     '{C:mult}+#1#{} Mult if',
                     'this joker is',
                     '{C:attention}either{} of the',
-                    '{C:attention}2 rightmost{} jokers',
+                    '2 {C:attention}rightmost{} jokers',
 
                 }
             },
@@ -385,16 +385,40 @@ return {
                     '{C:inactive}Currently {X:mult,C:white}X#3#{} Mult'
                 }
             },
-            
-
-            
-            --[[ j_neb_ledsign = {
-                name = 'Those Red LED Signs That Are Always Broken For Some Reason',
+            j_neb_bingo = {
+                name = 'Bingo Card',
                 text = {
-                    '{C:mult}+#1#{} Mult for each',
-                    'played {C:attention}Debuffed{} {C:hearts}Hearts{} card'
+                    '#2# #3# #4# #5# #6#'
                 }
-            }, ]]
+            },
+            j_neb_bottle_gourd = {
+                name = 'Bottle Gourd',
+                text = {
+                    "Stores {C:attention}base{} and {C:attention}permanent bonus{C:chips} chips",
+                    "of scored cards for the next {C:attention}#3#{} hands",
+                    "On the {C:attention}last{} remaining hand, give {C:chips}+1/5th{}",
+                    "of stored chips to cards permanently",
+                    '{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)'
+                }
+            },
+            j_neb_magazine = {
+                name = 'Magazine',
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult if the",
+                    "total {C:money}sell value{} of owned",
+                    'Jokers is {C:money}$#2#{} or {C:attention}more',
+                    "{C:inactive}(Currently {C:money}$#3#{C:inactive})"
+                }
+            },
+            j_neb_joker_test = {
+                name = 'Are You A Joker?',
+                text = {
+                    "Gains {C:mult}+#2#{} Mult",
+                    'when a {C:attention}Joker',
+                    'is obtained',
+                    '{C:inactive}(Currently {C:mult}+#1#{C:inactive})'
+                }
+            },
         },
         Enhanced = {
             m_neb_sticky = {
@@ -627,6 +651,8 @@ return {
             neb_dice_added = 'Dice',
             neb_tag = 'Tag',
             neb_noted = 'Noted!',
+            neb_mark = 'Marked',
+            neb_bingo = 'BINGO!',
 
             k_neb_dice = 'Dice',
             b_neb_dice_cards = "Dice",

@@ -1,0 +1,53 @@
+-- SMODS.Joker {
+--     key = 'bingo',
+--     atlas = 'nebulajokers',
+--     pos = {
+--         x = 2,
+--         y = 3
+--     },
+--     config = { extra = { xmult = 2.5,} },
+--     rarity = 1,
+--     cost = 5,
+--     loc_vars = function(self, info_queue, card)
+--         return {
+--             vars = {
+--                 card.ability.extra.xmult,
+--                 card.ability.extra.rank1,
+--                 card.ability.extra.rank2,
+--                 card.ability.extra.rank3,
+--                 card.ability.extra.rank4,
+--                 card.ability.extra.rank5,
+--             }
+--         }
+--     end,
+--     set_ability = function(self, card, initial, delay_sprites) --can't figure out how to sync it between copies so this must do
+--         local bingo_cards = {}
+--         for _card, _ in pairs(G.playing_cards) do
+--             if not SMODS.has_no_rank(_card) then
+--                 bingo_cards[#bingo_cards + 1] = _card
+--             end
+--         end
+--         card.ability.extra.rank1 = pseudorandom_element(bingo_cards, 'neb_bingo1')
+--         card.ability.extra.rank2 = pseudorandom_element(bingo_cards, 'neb_bingo2')
+--         card.ability.extra.rank3 = pseudorandom_element(bingo_cards, 'neb_bingo3')
+--         card.ability.extra.rank4 = pseudorandom_element(bingo_cards, 'neb_bingo4')
+--         card.ability.extra.rank5 = pseudorandom_element(bingo_cards, 'neb_bingo5')
+--     end,
+--     -- ORDERING:
+--     -- generate ranks
+--     -- show ranks to player via description
+--     -- use two tables for rank info
+--     --      one for checks + the numbers on the list
+--     --      the other as a checklist + color control
+--     -- use a stamp sound effect (+maybe sprite change?) when played rank is part of the list
+--     -- use a seperate message when it's the final one
+--     -- make sure everything is reset correctly at end of round and works with blueprint correctly
+
+--     calculate = function(self, card, context)
+--         if context.joker_main then
+--             return {
+--                 xmult = card.ability.extra.xmult
+--             }
+--         end
+--     end
+-- }

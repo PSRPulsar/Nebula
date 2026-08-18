@@ -6,7 +6,7 @@ SMODS.Joker {
         y = 1
     },
     pixel_size = { h = 80 },
-    config = { extra = { xmult = 1, scalar = 0.25, odds = 3 } },
+    config = { extra = { xmult = 1, scalar = 0.25, odds = 4 } },
     rarity = 2,
     cost = 7,
     loc_vars = function(self, info_queue, card)

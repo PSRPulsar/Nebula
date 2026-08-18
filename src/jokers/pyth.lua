@@ -6,7 +6,7 @@ SMODS.Joker {
         y = 5
     },
     soul_pos = { x = 7, y = 6 },
-    config = { extra = { xmult = 1, scalar = 1.3, reset = 1} },
+    config = { extra = { xmult = 1, scalar = 1.35, reset = 1} },
     rarity = 4,
     cost = 20,
     loc_vars = function(self, info_queue, card)
