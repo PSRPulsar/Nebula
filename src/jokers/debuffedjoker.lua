@@ -18,9 +18,16 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.joker_main and not context.blueprint then
+        if context.before and not context.blueprint then
             for _, pcard in ipairs(context.scoring_hand) do
                 if pcard.debuff then 
+                    G.E_MANAGER:add_event(Event({
+                            delay = 0.5,
+                            func = function()
+                                pcard:juice_up()
+                                return true
+                            end
+                        }))
                     SMODS.scale_card(card,{
                         ref_table = card.ability.extra,
                         ref_value = 'mult',

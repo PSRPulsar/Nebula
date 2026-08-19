@@ -5,7 +5,7 @@ SMODS.Joker {
         x = 0,
         y = 5
     },
-    config = { extra = { dollars = 6 } },
+    config = { extra = { dollars = 8 } },
     rarity = 1,
     cost = 6,
     loc_vars = function(self, info_queue, card)

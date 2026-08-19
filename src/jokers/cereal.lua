@@ -25,8 +25,15 @@ SMODS.Joker {
                         message_colour = G.C.ATTENTION,
                 })
         end
-        if context.joker_main and not context.blueprint and card.ability.extra.rounds >= 1 then
+        if context.before and not context.blueprint and card.ability.extra.rounds >= 1 then
             for k, v in ipairs(context.scoring_hand) do
+                G.E_MANAGER:add_event(Event({
+                            delay = 0.5,
+                            func = function()
+                                v:juice_up()
+                                return true
+                            end
+                        }))
                     SMODS.scale_card(card,{
                         ref_table = card.ability.extra,
                         ref_value = 'mult',

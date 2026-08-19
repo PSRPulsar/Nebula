@@ -258,7 +258,7 @@ return {
                     '{C:attention}discarded{} card, Gains {C:mult}+#5#{} Mult',
                     ' for each {C:attention}played{} card',
                     '{C:inactive}(Currently {C:chips}+#2#{} {C:inactive}Chips, {C:mult}+#4#{} {C:inactive}Mult)',
-                    '{C:inactive}(scales for #1# more rounds)'
+                    '{C:inactive}(scales for {C:attention}#1#{} more rounds)'
                 }
             },
             j_neb_dicestack = {
@@ -349,11 +349,9 @@ return {
             j_neb_windows = {
                 name = 'Activate Windows',
                 text = {
-                    '{C:mult}+#1#{} Mult if',
-                    'this joker is',
-                    '{C:attention}either{} of the',
-                    '2 {C:attention}rightmost{} jokers',
-
+                    '{C:mult}+#1#{} Mult if this',
+                    'Joker is {C:attention}either{} of',
+                    'the 2 {C:attention}rightmost{} jokers'
                 }
             },
             j_neb_cake = {

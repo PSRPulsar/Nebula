@@ -6,7 +6,7 @@ SMODS.Joker {
         y = 5
     },
     soul_pos = { x = 7, y = 6 },
-    config = { extra = { xmult = 1, scalar = 1.35, reset = 1} },
+    config = { extra = { xmult = 1, scalar = 1.3, reset = 1} },
     rarity = 4,
     cost = 20,
     loc_vars = function(self, info_queue, card)
@@ -17,9 +17,16 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.joker_main and not context.blueprint then
+        if context.before and not context.blueprint then
             for k, v in ipairs(context.scoring_hand) do
                 if v:is_suit('Diamonds') then
+                    G.E_MANAGER:add_event(Event({
+                            delay = 0.5,
+                            func = function()
+                                v:juice_up()
+                                return true
+                            end
+                        }))
                     SMODS.scale_card(card,{
                         ref_table = card.ability.extra,
                         ref_value = 'xmult',
