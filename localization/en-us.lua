@@ -120,7 +120,7 @@ return {
                 name = 'Treasure Map',
                 text = {
                     '{C:money}$#1#{} if hand contains',
-                    '5 scoring cards, and',
+                    '{C:attention}5{} scoring cards, and',
                     '{C:attention}exactly one{} is {C:attention}Debuffed{}'
                 }
             },
@@ -258,7 +258,7 @@ return {
                     '{C:attention}discarded{} card, Gains {C:mult}+#5#{} Mult',
                     ' for each {C:attention}played{} card',
                     '{C:inactive}(Currently {C:chips}+#2#{} {C:inactive}Chips, {C:mult}+#4#{} {C:inactive}Mult)',
-                    '{C:inactive}(scales for {C:attention}#1#{} more rounds)'
+                    '{C:inactive}(scales for {C:attention}#1#{C:inactive} more rounds)'
                 }
             },
             j_neb_dicestack = {
@@ -415,6 +415,30 @@ return {
                     'when a {C:attention}Joker',
                     'is obtained',
                     '{C:inactive}(Currently {C:mult}+#1#{C:inactive})'
+                }
+            },
+            j_neb_bumper = {
+                name = 'Bumper Stickers',
+                text = {
+                    'Gives {X:mult,C:white}X#1#{} Mult for',
+                    'each {C:attention}unique{} Seal',
+                    'in your {C:attention}full deck',
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)"
+                }
+            },
+            j_neb_xchips = {
+                name = 'XChips Joker',
+                text = {
+                    {
+                    '{X:chips,C:white}X#1#{} Chips Every time scored',
+                    'cards score {C:chips}+#2#{} Chips',
+                    'from the {C:attention}below sources'
+                    },
+                    {
+                    'Card {C:attention}base{} Chips,',
+                    '{C:attention}Permanent bonus{} Chips,',
+                    '{C:attention}Stone{}, {C:attention}Bonus{}, or {C:dark_edition}Foil{} cards'
+                    }
                 }
             },
         },

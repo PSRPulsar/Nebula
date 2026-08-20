@@ -42,17 +42,20 @@ SMODS.Consumable {
             for i = 1, roll do targed_cards[#targed_cards + 1] = temp_hand[i] 
             end
             for k, v in pairs(targed_cards) do
-                v:set_ability('m_neb_tiled', nil, true)
+                
                 G.E_MANAGER:add_event(Event({
-                trigger = 'after',
-                delay = 0.25,
+                trigger = 'before',
+                delay = 0.3,
                 func = function()
                 play_sound('tarot1')
                 v:juice_up(0.3, 0.5)
-                
+                v:set_ability('m_neb_tiled', nil, true)
                 return true
-            end}))
+                
+            end }))
+            
             end
+            
     end,
     can_use = function(self, card)
         if G.hand and G.hand.cards and #G.hand.cards > 0 then

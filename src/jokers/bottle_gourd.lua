@@ -25,7 +25,7 @@ SMODS.Joker {
             local chip_tally = 0
             for _, scored_card in ipairs(context.scoring_hand) do
                 if not scored_card.debuff then
-                    if not SMODS.has_no_rank(scored_card)  then
+                    if not SMODS.has_no_rank(scored_card) and not SMODS.has_no_suit(scored_card) then
                         chip_tally = chip_tally + scored_card.base.nominal
                     end
                     chip_tally = chip_tally + (scored_card.ability.perma_bonus or 0)

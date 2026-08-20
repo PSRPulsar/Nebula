@@ -45,7 +45,7 @@ SMODS.Joker {
     
                 end)}))
                 return {
-                    message = localize('neb_plus_tag'),
+                    message = localize('neb_tag'),
                 }
         end
     end
