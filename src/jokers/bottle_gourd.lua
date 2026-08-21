@@ -28,7 +28,6 @@ SMODS.Joker {
                     if not SMODS.has_no_rank(scored_card) and not SMODS.has_no_suit(scored_card) then
                         chip_tally = chip_tally + scored_card.base.nominal
                     end
-                    chip_tally = chip_tally + (scored_card.ability.perma_bonus or 0)
                     G.E_MANAGER:add_event(Event({
                             delay = 0.5,
                             func = function()
@@ -51,7 +50,7 @@ SMODS.Joker {
              end
         end
         if context.after and card.ability.extra.hands == 1 then
-            card.ability.extra.chips = card.ability.extra.chips / 5
+            card.ability.extra.chips = card.ability.extra.chips / 3
             card.ability.extra.chips  = math.floor(card.ability.extra.chips + 0.5)
             for k, v in ipairs(context.scoring_hand) do
                 v.ability.perma_bonus = v.ability.perma_bonus or 0

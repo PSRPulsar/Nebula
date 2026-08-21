@@ -47,9 +47,9 @@ SMODS.Joker {
                 end
                 chips_mult = chips_mult + card.ability.extra.chipsmult
                 card.ability.extra.chipsmult = card.ability.extra.chipsmult * 0
-                return {
-                    xchips = card.ability.extra.xchips ^ chips_mult
-                }
+                    return {
+                        xchips = card.ability.extra.xchips ^ chips_mult
+                    }
             end
             if context.after then
                 card.ability.extra.chips_count = 0

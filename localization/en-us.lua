@@ -392,10 +392,10 @@ return {
             j_neb_bottle_gourd = {
                 name = 'Bottle Gourd',
                 text = {
-                    "Stores {C:attention}base{} and {C:attention}permanent bonus{C:chips} chips",
-                    "of scored cards for the next {C:attention}#3#{} hands",
-                    "On the {C:attention}last{} remaining hand, give {C:chips}+1/5th{}",
-                    "of stored chips to cards permanently",
+                    "Stores {C:attention}base{} chips of scored",
+                    "cards for the next {C:attention}#3#{} hands",
+                    "On the {C:attention}last{} remaining hand, give {C:chips}+1/3rd{}",
+                    "of stored chips to each card permanently",
                     '{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)'
                 }
             },
@@ -430,7 +430,7 @@ return {
                 name = 'XChips Joker',
                 text = {
                     {
-                    '{X:chips,C:white}X#1#{} Chips Every time scored',
+                    '{X:chips,C:white}X#1#{} Chips every time scored',
                     'cards score {C:chips}+#2#{} Chips',
                     'from the {C:attention}below sources'
                     },
@@ -439,6 +439,15 @@ return {
                     '{C:attention}Permanent bonus{} Chips,',
                     '{C:attention}Stone{}, {C:attention}Bonus{}, or {C:dark_edition}Foil{} cards'
                     }
+                }
+            },
+            j_neb_nothing_is_wrong = {
+                name = 'Nothing Is Wrong With This Joker',
+                text = {
+                    'Gives {C:mult}+#1#{} Mult if',
+                    'played Poker Hand',
+                    'is the {C:attention}same type',
+                    'as the {C:attention}previous hand'
                 }
             },
         },

@@ -18,14 +18,14 @@ SMODS.Joker {
     calculate = function(self, card, context)
         local debuffed = 0
         local scoring = 0
-        if context.joker_main and not context.blueprint then
+        if context.joker_main then
             for _, pcard in ipairs(context.scoring_hand) do
                 if pcard.debuff then
                         debuffed = debuffed + 1
                 end
             end
         end
-        if context.joker_main and not context.blueprint then
+        if context.joker_main then
             for _, pcard in ipairs(context.scoring_hand) do
                 if not pcard.debuff then
                         scoring = scoring + 1
