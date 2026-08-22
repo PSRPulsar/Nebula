@@ -3,7 +3,7 @@ SMODS.Consumable {
     set = 'neb_dice',
     atlas = 'nebulaconsumables',
     pos = {x=8, y=0},
-    config = {extra = { chips = 35 }},
+    config = {extra = { chips = 55 }},
     soul_pos = {x=3,y=0},
     loc_vars = function(self, info_queue, card)
         return {

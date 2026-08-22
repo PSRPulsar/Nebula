@@ -1,53 +1,91 @@
--- SMODS.Joker {
---     key = 'bingo',
---     atlas = 'nebulajokers',
---     pos = {
---         x = 2,
---         y = 3
---     },
---     config = { extra = { xmult = 2.5,} },
---     rarity = 1,
---     cost = 5,
---     loc_vars = function(self, info_queue, card)
---         return {
---             vars = {
---                 card.ability.extra.xmult,
---                 card.ability.extra.rank1,
---                 card.ability.extra.rank2,
---                 card.ability.extra.rank3,
---                 card.ability.extra.rank4,
---                 card.ability.extra.rank5,
---             }
---         }
---     end,
---     set_ability = function(self, card, initial, delay_sprites) --can't figure out how to sync it between copies so this must do
---         local bingo_cards = {}
---         for _card, _ in pairs(G.playing_cards) do
---             if not SMODS.has_no_rank(_card) then
---                 bingo_cards[#bingo_cards + 1] = _card
---             end
---         end
---         card.ability.extra.rank1 = pseudorandom_element(bingo_cards, 'neb_bingo1')
---         card.ability.extra.rank2 = pseudorandom_element(bingo_cards, 'neb_bingo2')
---         card.ability.extra.rank3 = pseudorandom_element(bingo_cards, 'neb_bingo3')
---         card.ability.extra.rank4 = pseudorandom_element(bingo_cards, 'neb_bingo4')
---         card.ability.extra.rank5 = pseudorandom_element(bingo_cards, 'neb_bingo5')
---     end,
---     -- ORDERING:
---     -- generate ranks
---     -- show ranks to player via description
---     -- use two tables for rank info
---     --      one for checks + the numbers on the list
---     --      the other as a checklist + color control
---     -- use a stamp sound effect (+maybe sprite change?) when played rank is part of the list
---     -- use a seperate message when it's the final one
---     -- make sure everything is reset correctly at end of round and works with blueprint correctly
-
---     calculate = function(self, card, context)
---         if context.joker_main then
---             return {
---                 xmult = card.ability.extra.xmult
---             }
---         end
---     end
--- }
+SMODS.Joker {
+    key = 'bingo',
+    atlas = 'nebulajokers',
+    pos = {
+        x = 2,
+        y = 3
+    },
+    config = { extra = { used = 0, requirement = 5,} },
+    rarity = 2,
+    cost = 8,
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.used,
+                card.ability.extra.requirement
+            }
+        }
+    end,
+    set_sprites =  function(self, card, front)
+        if not G.SETTINGS.paused then
+            if card.ability then
+            if card.ability.extra.used > 0 and card.ability.extra.used <= 5  then
+                G.E_MANAGER:add_event(Event({
+                    blocakable = false,
+                    func = (function()
+                        card.children.center:set_sprite_pos({x = card.ability.extra.used, y = 6})
+                        return true
+                    end)
+                }))
+            elseif card.ability.extra.used > 5 then
+                G.E_MANAGER:add_event(Event({
+                    blocakable = false,
+                    func = (function()
+                        card.children.center:set_sprite_pos({x = 5, y = 6})
+                        return true
+                    end)
+                }))
+            end
+        end
+        end
+    end,
+    calculate = function(self, card, context)
+        if context.using_consumeable and not context.blueprint then
+            card.ability.extra.used = card.ability.extra.used + 1
+            if card.ability.extra.used <= card.ability.extra.requirement then
+                card.children.center:set_sprite_pos({x = card.ability.extra.used, y = 6})
+                card:juice_up()
+                play_sound('gold_seal', 1.2, 0.4) --can you play sounds outside of events? probably right?
+            end
+            if card.ability.extra.used == card.ability.extra.requirement then
+                return {
+                    message = localize('neb_bingo'),
+                    colour = G.C.MULT
+                }
+            end
+            
+        end
+        if context.first_hand_drawn and not context.blueprint then
+            local eval = function() return G.GAME.current_round.hands_played == 0 and not G.RESET_JIGGLES and card.ability.extra.used >= card.ability.extra.requirement end -- from vremade DNA
+            juice_card_until(card, eval, true)
+        end
+        if context.before and G.GAME.current_round.hands_played == 0 and card.ability.extra.used >= card.ability.extra.requirement then
+            local card_copy = SMODS.copy_card(context.scoring_hand[1], {area = G.hand})
+            card_copy.states.visible = nil
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    card_copy:start_materialize()
+                    return true
+                end
+            }))
+            return {
+                message = localize('k_copied_ex'),
+                colour = G.C.MULT,
+                func = function() -- This is for timing purposes, it runs after the message
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            SMODS.calculate_context({ playing_card_added = true, cards = { card_copy } })
+                            return true
+                        end
+                    }))
+                end
+            }
+        end
+        if context.end_of_round and not context.individual and not context.blueprint then
+            card.ability.extra.used = 0
+            return {
+                message = localize('k_reset'),
+            }
+        end
+    end
+}

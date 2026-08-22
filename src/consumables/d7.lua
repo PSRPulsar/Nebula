@@ -4,7 +4,7 @@ SMODS.Consumable {
     atlas = 'nebulaconsumables',
     pos = {x=7, y=1},
     soul_pos = {x=0,y=4},
-    config = {extra = { mult = 3 }},
+    config = {extra = { mult = 5 }},
     loc_vars = function(self, info_queue, card)
         return {
             vars = {

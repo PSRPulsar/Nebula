@@ -386,7 +386,11 @@ return {
             j_neb_bingo = {
                 name = 'Bingo Card',
                 text = {
-                    '#2# #3# #4# #5# #6#'
+                    'Copies the{C:attention} first{} scoring',
+                    'card of the round if {C:attention}#2# ',
+                    'Consumables have been {C:attention}used{} since',
+                    'the end of the {C:attention}previous{} Blind',
+                    '{C:inactive}Currently {C:attention}#1#{C:inactive} Used'
                 }
             },
             j_neb_bottle_gourd = {
@@ -682,7 +686,6 @@ return {
             neb_dice_added = 'Dice',
             neb_tag = 'Tag',
             neb_noted = 'Noted!',
-            neb_mark = 'Marked',
             neb_bingo = 'BINGO!',
 
             k_neb_dice = 'Dice',
