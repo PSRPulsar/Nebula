@@ -2,8 +2,8 @@ SMODS.Joker {
     key = 'warning',
     atlas = 'nebulajokers',
     pos = {
-        x = 0,
-        y = 6
+        x = 3,
+        y = 2
     },
     config = { extra = { xmult = 1, multmult = 2} },
     rarity = 3,

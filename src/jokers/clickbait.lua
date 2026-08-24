@@ -28,22 +28,24 @@ SMODS.Joker {
         end
         if context.joker_main and SMODS.pseudorandom_probability(card, 'neb_clickbait', (1 + debuffcount), card.ability.extra.odds) then
                 G.E_MANAGER:add_event(Event({
-                
                 func = (function()
-                
-                local tag_pool = get_current_pool('Tag')
-                local selected_tag = pseudorandom_element(tag_pool, 'neb_clickbait')
-                local it = 1
-                while selected_tag == 'UNAVAILABLE' do
-                    it = it + 1
-                    selected_tag = pseudorandom_element(tag_pool, 'neb_clickbait'..it)
+                local _tag_key = get_next_tag_key("neb_clickbait")
+                local _tag = Tag(_tag_key)
+                if _tag.key == "tag_orbital" then
+                    local visible_hands = {}
+                    for k, _ in pairs(G.GAME.hands) do
+                        if SMODS.is_poker_hand_visible(k) then
+                            visible_hands[#visible_hands + 1] = k
+                        end
+                    end
+                    _tag.ability.orbital_hand = pseudorandom_element(visible_hands, pseudoseed('neb_clickbait_orbital'))
                 end
-                add_tag(Tag(selected_tag, false, 'Small'))
-                    play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
-                    play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
+                add_tag(_tag)
+                play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                 return true
-    
-                end)}))
+            end)
+            }))
                 return {
                     message = localize('neb_tag'),
                 }

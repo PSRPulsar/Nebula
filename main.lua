@@ -47,6 +47,10 @@ SMODS.Atlas {
     frames = 21,
     fps = 10
 }
+SMODS.Sound {
+	key = "neb_stonecutter",
+	path = "stonecutter.ogg"
+}
 local jokers_src = SMODS.NFS.getDirectoryItems(SMODS.current_mod.path .. "src/jokers")
 for _, file in ipairs(jokers_src) do
     assert(SMODS.load_file("src/jokers/" .. file))()

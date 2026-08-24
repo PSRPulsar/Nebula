@@ -390,7 +390,7 @@ return {
                     'card of the round if {C:attention}#2# ',
                     'Consumables have been {C:attention}used{} since',
                     'the end of the {C:attention}previous{} Blind',
-                    '{C:inactive}Currently {C:attention}#1#{C:inactive} Used'
+                    '{C:inactive}(Currently {C:attention}#1#{C:inactive} Used)'
                 }
             },
             j_neb_bottle_gourd = {
@@ -452,6 +452,31 @@ return {
                     'played Poker Hand',
                     'is the {C:attention}same type',
                     'as the {C:attention}previous hand'
+                }
+            },
+            j_neb_checklist = {
+                name = 'Checklist',
+                text = {
+                    'Gains {C:chips}+#2#{} Chips for each {C:attention}Debuffed{}',
+                    'card {C:attention}held in hand{} when',
+                    'hand is played {C:attention}this round{}',
+                    '{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)'
+                }
+            },
+            j_neb_masterpiece = {
+                name = 'Masterpiece',
+                text = {
+                    "After {C:attention}#1#{C:inactive} (#2#) {C:attention}Stone{} cards",
+                    "have been {C:attention}destroyed{},",
+                    "{C:attention}Duplicate{} Joker to the {C:attention}right",
+                }
+            },
+            j_neb_enchanted = {
+                name = 'Enchanted Book',
+                text = {
+                    "Joker to the {C:attention}right",
+                    'Gains {C:money}+$#1#{} of {C:attention}sell value',
+                    'when Blind is defeated'
                 }
             },
         },
@@ -687,6 +712,7 @@ return {
             neb_tag = 'Tag',
             neb_noted = 'Noted!',
             neb_bingo = 'BINGO!',
+            neb_chiseled = 'Chiseled!',
 
             k_neb_dice = 'Dice',
             b_neb_dice_cards = "Dice",
