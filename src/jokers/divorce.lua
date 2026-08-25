@@ -5,6 +5,7 @@ SMODS.Joker {
     rarity = 2,
     cost = 6,
     pos = { x = 5, y = 0 },
+    attributes = {'food'},
     config = { extra = { hands = 10, scalar = 1 } },
     eternal_compat = false,
     loc_vars = function(self, info_queue, card)

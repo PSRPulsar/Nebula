@@ -12,29 +12,29 @@ return {
             j_neb_summer = {
                 name = 'Summer',
                 text = {
-                    'Retriggers every played',
-                    '{C:diamonds}Diamonds{} card'
+                    'Retriggers every',
+                    'played {C:diamonds}Diamonds{} card'
                 }
             },
             j_neb_autumn = {
                 name = 'Autumn',
                 text = {
-                    'Retriggers every played',
-                    '{C:clubs}Clubs{} card'
+                    'Retriggers every',
+                    'played {C:clubs}Clubs{} card'
                 }
             },
             j_neb_winter = {
                 name = 'Winter',
                 text = {
-                    'Retriggers every played',
-                    '{C:spades}Spades{} card'
+                    'Retriggers every',
+                    'played {C:spades}Spades{} card'
                 }
             },
             j_neb_spring = {
                 name = 'Spring',
                 text = {
-                    'Retriggers every played',
-                    '{C:hearts}Hearts{} card'
+                    'Retriggers every',
+                    'played {C:hearts}Hearts{} card'
                 }
             },
             j_neb_normalmap = {
@@ -65,7 +65,8 @@ return {
                 name = 'Power Outlet',
                 text = {
                     '{C:mult}+#1#{} Mult if all scored cards',
-                    'have an {C:attention}Enhancement{}'
+                    'have any {C:attention}Enhancement,{}',
+                    '{C:attention}Seal{}, or {C:dark_edition}Edition'
                 }
             },
             j_neb_bowling = {
@@ -127,10 +128,10 @@ return {
             j_neb_monolith = {
                 name = 'Green Monolith',
                 text = {
-                    'Gain a random {C:purple}Tarot{} card if',
+                    'Fills Consumable slots with',
+                    'random {C:purple}Tarot{} cards if',
                     '{C:attention}poker hand{} is a {C:attention}#1#{},',
-                    "poker hand changes",
-                    "at end of round",
+                    "poker hand changes at end of round",
                     "{C:inactive}(Must have room)"
                 }
             },
@@ -459,7 +460,7 @@ return {
                 text = {
                     'Gains {C:chips}+#2#{} Chips for each {C:attention}Debuffed{}',
                     'card {C:attention}held in hand{} when',
-                    'hand is played {C:attention}this round{}',
+                    'a hand is played {C:attention}this round{}',
                     '{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)'
                 }
             },
@@ -468,7 +469,8 @@ return {
                 text = {
                     "After {C:attention}#1#{C:inactive} (#2#) {C:attention}Stone{} cards",
                     "have been {C:attention}destroyed{},",
-                    "{C:attention}Duplicate{} Joker to the {C:attention}right",
+                    '{C:attention}sell{} this Joker to',
+                    "{C:attention}duplicate{} Joker to the {C:attention}right",
                 }
             },
             j_neb_enchanted = {
@@ -477,6 +479,15 @@ return {
                     "Joker to the {C:attention}right",
                     'Gains {C:money}+$#1#{} of {C:attention}sell value',
                     'when Blind is defeated'
+                }
+            },
+            j_neb_shooting_gallery = {
+                name = 'Shooting Gallery',
+                text = {
+                    "Gains {X:mult,C:white}X#2#{} Mult if",
+                    'played hand is a single {C:attention}#3#',
+                    'Rank changes after scaling',
+                    '{C:inactive}(Currently {X:mult,C:white}X#1#{}{C:inactive})'
                 }
             },
         },
@@ -713,6 +724,7 @@ return {
             neb_noted = 'Noted!',
             neb_bingo = 'BINGO!',
             neb_chiseled = 'Chiseled!',
+            neb_multi_tarot = '+Tarot',
 
             k_neb_dice = 'Dice',
             b_neb_dice_cards = "Dice",

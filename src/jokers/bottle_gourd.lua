@@ -5,6 +5,7 @@ SMODS.Joker {
         x = 2,
         y = 2
     },
+    attributes = {'food'},
     rarity = 2,
     cost = 7,
     blueprint_compat = false,

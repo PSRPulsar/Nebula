@@ -8,6 +8,7 @@ SMODS.Joker {
     config = { extra = { stonedestroyed = 0, requirement = 3,} },
     rarity = 3,
     cost = 10,
+    pixel_size = { h = 85, w = 43 },
     loc_vars = function(self, info_queue, card)
         local main_end = {}
         if G.jokers and G.jokers.cards then

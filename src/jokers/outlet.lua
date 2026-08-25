@@ -16,10 +16,10 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.joker_main  and context.scoring_hand then
+        if context.joker_main and context.scoring_hand then
             local enhanced = true
             for i = 1, #context.scoring_hand do
-                if context.scoring_hand[i].config.center == G.P_CENTERS.c_base then
+                if (context.scoring_hand[i].config.center == G.P_CENTERS.c_base) and not (context.scoring_hand[i].seal) and not (context.scoring_hand[i].edition) then
                     enhanced = false
                 end
             end

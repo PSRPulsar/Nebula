@@ -9,6 +9,7 @@ SMODS.Joker {
     config = { extra = { xmult = 1, scalar = 0.25, odds = 4 } },
     rarity = 2,
     cost = 7,
+    perishable_compat = false,
     loc_vars = function(self, info_queue, card)
         local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'neb_puzzle')
         return {

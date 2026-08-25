@@ -5,6 +5,7 @@ SMODS.Joker {
         x = 9,
         y = 2
     },
+    attributes = {'food'},
     config = { extra = { rounds = 3, chips = 0, chipsscalar = 3, mult = 0 , multscalar = 1, toggle = 0} },
     rarity = 2,
     perishable_compat = false,

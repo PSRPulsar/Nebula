@@ -5,13 +5,14 @@ SMODS.Joker {
         x = 5,
         y = 1
     },
-    config = { extra = { poker_hand = 'High Card' } },
+    config = { extra = { poker_hand = 'High Card', quantity = 2 } },
     rarity = 2,
     cost = 6,
+    blueprint_compat = false,
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                localize(card.ability.extra.poker_hand, 'poker_hands')
+                localize(card.ability.extra.poker_hand, 'poker_hands', card.ability.extra.quantity)
             }
         }
     end,
@@ -26,7 +27,8 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main and context.scoring_name == card.ability.extra.poker_hand and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
-             G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+            repeat
+                G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                 G.E_MANAGER:add_event(Event({
                     func = (function()
                         SMODS.add_card {
@@ -37,8 +39,10 @@ SMODS.Joker {
                         return true
                     end)
                 }))
-                return {
-                    message = localize('k_plus_tarot'),
+                
+            until #G.consumeables.cards + G.GAME.consumeable_buffer == G.consumeables.config.card_limit
+            return {
+                    message = localize('neb_multi_tarot'),
                 }
         end
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
