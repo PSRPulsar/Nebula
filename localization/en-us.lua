@@ -490,6 +490,16 @@ return {
                     '{C:inactive}(Currently {X:mult,C:white}X#1#{}{C:inactive})'
                 }
             },
+            j_neb_square_hole = {
+                name = 'It Goes In The Square Hole',
+                text = {
+                    'Each played {C:attention}4 {}has',
+                    "a {C:green}#1# in #2#{} chance",
+                    'to give {C:red}+#3#{} Discard',
+                    'when scored'
+                    
+                }
+            },
         },
         Enhanced = {
             m_neb_sticky = {
@@ -725,6 +735,7 @@ return {
             neb_bingo = 'BINGO!',
             neb_chiseled = 'Chiseled!',
             neb_multi_tarot = '+Tarot',
+            neb_plus_discard = '+1 Discard',
 
             k_neb_dice = 'Dice',
             b_neb_dice_cards = "Dice",
