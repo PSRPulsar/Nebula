@@ -7,7 +7,7 @@ SMODS.Joker {
     },
     config = { extra = { adding = 2, rounds = 5} },
     rarity = 2,
-    cost = 5, --this is actually really cheap but i can't be assed editing the sprite to say 6.99 instead
+    cost = 7,
     attributes = {'food'},
     blueprint_compat = false,
     eternal_compat = false,

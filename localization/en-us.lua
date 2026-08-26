@@ -510,6 +510,16 @@ return {
                     
                 }
             },
+            j_neb_hexaflexagon = {
+                name = 'Hexaflexagon',
+                text = {
+                    '{C:blue}+1 {}hand if played hand',
+                    'is the {C:attention}final{} hand of round',
+                    '(max {C:attention}#2# {}times per round)',
+                    '{C:inactive}({C:attention}#1#{} {C:inactive}left)'
+                    
+                }
+            },
         },
         Enhanced = {
             m_neb_sticky = {
