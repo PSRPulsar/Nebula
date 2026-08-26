@@ -500,6 +500,16 @@ return {
                     
                 }
             },
+            j_neb_combo_meal = {
+                name = 'Combo Meal',
+                text = {
+                    '{C:blue}+#1# {}hands',
+                    'and {C:red}+#1# {}discards',
+                    '{C:inactive}({C:attention}#2#{C:inactive} rounds left)'
+
+                    
+                }
+            },
         },
         Enhanced = {
             m_neb_sticky = {
