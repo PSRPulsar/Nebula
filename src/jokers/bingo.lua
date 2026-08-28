@@ -83,6 +83,7 @@ SMODS.Joker {
         end
         if context.end_of_round and not context.individual and not context.blueprint then
             card.ability.extra.used = 0
+            card.children.center:set_sprite_pos({x = 2, y = 3})
             return {
                 message = localize('k_reset'),
             }

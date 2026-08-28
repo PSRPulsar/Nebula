@@ -22,6 +22,10 @@ SMODS.Joker {
         if context.setting_ability and context.unchanged and G.P_CENTERS[context.new].set == 'Enhanced' and SMODS.pseudorandom_probability(card, 'neb_factory', 1, card.ability.extra.odds) then
             local random_edition = SMODS.poll_edition { key = "neb_factory", guaranteed = true, no_negative = true }
             context.other_card:set_edition(random_edition)
+            card:juice_up()
+            return {
+                message = localize('neb_edition')
+            }
         end
     end
 }

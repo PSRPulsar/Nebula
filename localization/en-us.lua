@@ -12,36 +12,37 @@ return {
             j_neb_summer = {
                 name = 'Summer',
                 text = {
-                    'Retriggers every',
+                    'Retrigger every',
                     'played {C:diamonds}Diamonds{} card'
                 }
             },
             j_neb_autumn = {
                 name = 'Autumn',
                 text = {
-                    'Retriggers every',
+                    'Retrigger every',
                     'played {C:clubs}Clubs{} card'
                 }
             },
             j_neb_winter = {
                 name = 'Winter',
                 text = {
-                    'Retriggers every',
+                    'Retrigger every',
                     'played {C:spades}Spades{} card'
                 }
             },
             j_neb_spring = {
                 name = 'Spring',
                 text = {
-                    'Retriggers every',
+                    'Retrigger every',
                     'played {C:hearts}Hearts{} card'
                 }
             },
             j_neb_normalmap = {
                 name = 'Normal Map',
                 text = {
-                    'Played cards with {C:attention}Enhancements{} ',
-                    'give {C:chips}+#1#{} Chips '
+                    'Played cards with',
+                    '{C:attention}Enhancements{}',
+                    'give {C:chips}+#1#{} Chips'
                 }
             },
             j_neb_floppydisk = {
@@ -103,10 +104,10 @@ return {
             j_neb_reviewbomb = {
                 name = 'Review Bombing',
                 text = {
-                    'Gives {C:money}$#1#{} at end',
-                    'of round, Gains {C:money}+#2#{}',
-                    'if at least {C:attention}4 Debuffed{}',
-                    'cards "scored" in hand'
+                    'Gives {C:money}$#1#{} at end of',
+                    'round, Gains {C:money}+#2#{} if at',
+                    'least {C:attention}4 Debuffed{} cards',
+                    '"scored" in played hand'
                 }
             },
             j_neb_tictactoe = {
@@ -298,7 +299,7 @@ return {
             j_neb_finrock = { -- kerbal space program 2 redux mentioned
                 name = 'Fin Rock',
                 text = {
-                    'Retriggers every played',
+                    'Retrigger every played',
                     '{C:attention}suitless{} card and',
                     'every {C:attention}rankless{} card'
                 }
@@ -506,8 +507,6 @@ return {
                     '{C:blue}+#1# {}hands',
                     'and {C:red}+#1# {}discards',
                     '{C:inactive}({C:attention}#2#{C:inactive} rounds left)'
-
-                    
                 }
             },
             j_neb_hexaflexagon = {
@@ -517,7 +516,15 @@ return {
                     'is the {C:attention}final{} hand of round',
                     '(max {C:attention}#2# {}times per round)',
                     '{C:inactive}({C:attention}#1#{} {C:inactive}left)'
-                    
+                }
+            },
+            j_neb_alien_artifact = {
+                name = 'Alien Artifact',
+                text = {
+                    '{X:mult,C:white}X#1#{} Mult if at least',
+                    '{C:attention}#2#{C:inactive} (#3#){C:attention} unique {C:planet}Planet{}',
+                    'cards have been',
+                    'used this run'
                 }
             },
         },
@@ -583,7 +590,7 @@ return {
             c_neb_d2 = {
                 name = 'D2',
                 text = {
-                    'Gives {C:attention}D2{}',
+                    'Gives {C:attention}D2{} random',
                     'cards held in hand',
                     'a random {C:attention}Seal{}'
                 }
@@ -605,8 +612,9 @@ return {
             c_neb_d6 = {
                 name = 'D6',
                 text = {
-                    'Enhances up to {C:attention}D6{}',
-                    'cards to {C:attention}Tiled Cards{}'
+                    'Enhances {C:attention}D6{} random',
+                    'cards held in hand',
+                    'to {C:attention}Tiled Cards{}'
                 }
             },
             c_neb_d7 = {
@@ -658,7 +666,7 @@ return {
                 text = {
                     '{C:neb_dice}Dice{} cards may',
                     'appear in the shop',
-                    'start with a {C:attention}D2{}'
+                    'start with a {C:attention,T:c_neb_d2}D2{}'
                 }
             },
             b_neb_shuttle = {
@@ -673,7 +681,7 @@ return {
             v_neb_luckycharm = {
                 name = 'Lucky Charm',
                 text = {
-                    '{C:attention}+1 Option{} in',
+                    '{C:attention}+1 Card{} in',
                     'all Probability Packs'
                 }
             },
@@ -756,6 +764,7 @@ return {
             neb_chiseled = 'Chiseled!',
             neb_multi_tarot = '+Tarot',
             neb_plus_discard = '+1 Discard',
+            neb_edition = 'Editioned!',
 
             k_neb_dice = 'Dice',
             b_neb_dice_cards = "Dice",

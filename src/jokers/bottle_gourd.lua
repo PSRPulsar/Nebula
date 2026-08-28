@@ -28,15 +28,14 @@ SMODS.Joker {
                 if not scored_card.debuff then
                     if not SMODS.has_no_rank(scored_card) and not SMODS.has_no_suit(scored_card) then
                         chip_tally = chip_tally + scored_card.base.nominal
-                    end
-                    G.E_MANAGER:add_event(Event({
+                        G.E_MANAGER:add_event(Event({
                             delay = 0.5,
                             func = function()
                                 scored_card:juice_up()
                                 return true
                             end
                         }))
-                    SMODS.scale_card (card,{
+                        SMODS.scale_card (card,{
                         ref_table = card.ability.extra,
                         ref_value = 'chips',
                         scalar_value = 'scalar',
@@ -46,6 +45,8 @@ SMODS.Joker {
                         end
                     
                     })
+                    end
+                    
                 end
                 chip_tally = 0 --reset value before the next card is checked
              end

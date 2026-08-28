@@ -24,9 +24,7 @@ SMODS.Joker {
                         return true
                     end, 
                     }))
-                return {
-                    sound = 'polychrome1' -- i have absolutely no idea why doing this makes only the first card get the edition, but if it works it works (this isn't even actually playing sound or anything)
-                }
+                break
              end
         end
         if context.after and #context.scoring_hand > 0 and not context.blueprint then

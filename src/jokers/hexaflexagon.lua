@@ -20,6 +20,7 @@ SMODS.Joker {
         if context.before and G.GAME.current_round.hands_left == 0 and card.ability.extra.hands_left > 0 then
             ease_hands_played(1)
             card.ability.extra.hands_left = card.ability.extra.hands_left - 1
+            card:juice_up()
         end
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
             card.ability.extra.hands_left = card.ability.extra.max

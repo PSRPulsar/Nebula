@@ -8,6 +8,7 @@ SMODS.Joker {
     config = { extra = { stonedestroyed = 0, requirement = 3,} },
     rarity = 3,
     cost = 10,
+    eternal_compat = false,
     pixel_size = { h = 85, w = 43 },
     loc_vars = function(self, info_queue, card)
         local main_end = {}
@@ -61,6 +62,8 @@ SMODS.Joker {
             end
         end
         if context.remove_playing_cards and not context.blueprint and card.ability.extra.stonedestroyed >= card.ability.extra.requirement then
+            local eval = function() return not G.RESET_JIGGLES and card.ability.extra.stonedestroyed >= card.ability.extra.requirement end
+            juice_card_until(card, eval, true)
             return {
                 message = localize('neb_chiseled'),
                 colour = G.C.SECONDARY_SET.Default
